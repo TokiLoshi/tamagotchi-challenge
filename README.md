@@ -4,8 +4,8 @@ Lets see what we can build
 
 # ToDo List
 
-- [ ] Basic project set up
-- [ ] Deploy to Vercel
+- [x] Basic project set up
+- [x] Deploy to Vercel
 - [ ] Set up Zustand states ("start", "hatching", "idle", "eating", "growing", "sleeping")
 - [ ] Set up food counters
 - [ ] Create LowPoly Tamagotchi Blender File
