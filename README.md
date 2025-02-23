@@ -8,9 +8,9 @@ Lets see what we can build
 - [x] Deploy to Vercel
 - [x] Set up Zustand states ("start", "hatching", "idle", "eating", "growing", "sleeping")
 - [x] Set up food counters
-- [ ] Create LowPoly Tamagotchi Blender File
-- [ ] Load Model on
-- [ ] Implement click detection
+- [x] Create LowPoly Tamagotchi Blender File
+- [x] Load Model on
+- [x] Implement click detection
 - [ ] On Model Click Rotate Model set Zustand State to "hatching"
 - [ ] Create Egg sprite texture or shader
 - [ ] Add animation to distort egg and give idea of it hatching
