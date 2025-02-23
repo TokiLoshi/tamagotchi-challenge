@@ -13,17 +13,6 @@ export default function Creature({ position }) {
 
 	// Load in the model
 	const { scene } = useGLTF("./tamagotchi.glb");
-	// console.log("GLTF: ", scene);
-
-	// console.log("Scene contents: ", scene);
-	// console.log("Scene children: ", scene.children);
-
-	// scene.traverse((child) => {
-	// 	console.log("Child object: ", child);
-	// 	if (child.isMesh) {
-	// 		console.log("Found mesh: ", child.name);
-	// 	}
-	// });
 
 	// Creature buttons
 	function handleLeftButton() {

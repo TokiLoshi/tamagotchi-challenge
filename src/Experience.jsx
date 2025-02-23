@@ -48,7 +48,7 @@ export default function Experience() {
 	return (
 		<>
 			<Creature position={[2, 2, 1]} />
-
+			{/* 
 			<group position={[1, 0, 2]}>
 				{currentState === GAME_STATES.IDLE && (
 					<>
@@ -72,7 +72,7 @@ export default function Experience() {
 						</mesh>
 					</>
 				)}
-			</group>
+			</group> */}
 		</>
 	);
 }
