@@ -6,8 +6,8 @@ Lets see what we can build
 
 - [x] Basic project set up
 - [x] Deploy to Vercel
-- [ ] Set up Zustand states ("start", "hatching", "idle", "eating", "growing", "sleeping")
-- [ ] Set up food counters
+- [x] Set up Zustand states ("start", "hatching", "idle", "eating", "growing", "sleeping")
+- [x] Set up food counters
 - [ ] Create LowPoly Tamagotchi Blender File
 - [ ] Load Model on
 - [ ] Implement click detection

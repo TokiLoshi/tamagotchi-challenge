@@ -45,8 +45,6 @@ export default function Experience() {
 		feedFood(foodType);
 		setTimeout(() => setState(GAME_STATES.IDLE), 1000);
 	}
-
-	console.log(GAME_STATES);
 	return (
 		<>
 			<Creature position={[2, 2, 1]} />
