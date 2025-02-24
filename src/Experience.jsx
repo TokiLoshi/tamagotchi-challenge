@@ -43,7 +43,9 @@ export default function Experience() {
 			<Suspense fallback={null}>
 				{currentState != "start" && scoreTotal < 3 && <Scores />}
 				{currentState == "start" && <Egg texture={textures.egg} />}
-				{currentState == "idle" && <Hatchling texture={textures.hatchling} />}
+				{currentState == "idle" && scoreTotal < 3 && (
+					<Hatchling texture={textures.hatchling} />
+				)}
 				{currentState == "eating" && (
 					<Eating texture={textures.eating[currentFood]} />
 				)}
