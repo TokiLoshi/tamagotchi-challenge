@@ -11,7 +11,7 @@ export const GAME_STATES = {
 
 export const useStore = create((set) => ({
 	currentState: GAME_STATES.START,
-
+	currentFood: "candy",
 	// Scores
 	scoreTotal: 0,
 	foodScores: {
@@ -21,9 +21,11 @@ export const useStore = create((set) => ({
 	},
 	// Actions
 	setState: (newState) => set(() => ({ currentState: newState })),
+	setFood: (foodType) => set(() => ({ currentFood: foodType })),
 	feedFood: (foodType) =>
 		set((state) => ({
 			scoreTotal: state.scoreTotal + 1,
+			currentFood: foodType,
 			foodScores: {
 				...state.foodScores,
 				[foodType]: state.foodScores[foodType] + 1,
@@ -32,6 +34,7 @@ export const useStore = create((set) => ({
 	reset: () =>
 		set({
 			currentState: GAME_STATES.START,
+			currentFood: "candy",
 			scoreTotal: 0,
 			foodScores: { candy: 0, tofu: 0, pizza: 0 },
 		}),

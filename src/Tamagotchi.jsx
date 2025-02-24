@@ -9,37 +9,33 @@ import { useStore, GAME_STATES } from "./Store";
 export default function Tamagotchi(props) {
 	const { nodes, materials } = useGLTF("/tamagotchi.glb");
 
+	// Refs
 	const tamagotchiRef = useRef();
 	const leftButtonRef = useRef();
 	const middleButtonRef = useRef();
 	const rightButtonRef = useRef();
 
-	const { currentState, scoreTotal, foodScores, setState, feedFood } =
+	const { currentState, setFood, scoreTotal, foodScores, setState, feedFood } =
 		useStore();
-	useEffect(() => {
-		console.log(`Current State: ${currentState}`);
-		console.log(`CurrentScore: ${scoreTotal}`);
-		console.log(
-			`Food scores: \n candy: ${foodScores.candy} \n tofu: ${foodScores.tofu} \n pizza: ${foodScores.pizza}`
-		);
-	}, [currentState, scoreTotal, foodScores]);
 
+	// Handle Button Clicks
+	// TODO: button click animations
 	const handleLeftClick = () => {
-		console.log("Left button clicked - candy");
 		setState(GAME_STATES.EATING);
 		feedFood("candy");
+		setFood("candy");
 		setTimeout(() => setState(GAME_STATES.IDLE), 1000);
 	};
 	const handleMiddleClick = () => {
-		console.log("Middle button clicked - tofu");
 		setState(GAME_STATES.EATING);
 		feedFood("tofu");
+		setFood("tofu");
 		setTimeout(() => setState(GAME_STATES.IDLE), 1000);
 	};
 	const handleRightClick = () => {
-		console.log("Right button clicked - pizza");
 		setState(GAME_STATES.EATING);
 		feedFood("pizza");
+		setFood("pizza");
 		setTimeout(() => setState(GAME_STATES.IDLE), 1000);
 	};
 
