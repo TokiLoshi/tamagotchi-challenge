@@ -13,23 +13,20 @@ export default function Scores() {
 			<div
 				style={{
 					backgroundColor: "#311971",
-					colour: "#000000",
 					padding: "10px",
 					borderRadius: "10px",
 					position: "relative",
 				}}>
-				<h1>Today's menu</h1>
-				<p>
-					<span style={{ text: "#FF0000", textDecoration: "underline" }}>
-						Candy:
-					</span>{" "}
-					🍭 {foodScores.candy}
+				<h1 style={{ color: "#FFA1FF" }}>Today's menu</h1>
+				<p style={{ color: "#FFA1FF" }}>
+					<span style={{ textDecoration: "underline" }}>Candy:</span> 🍭{" "}
+					{foodScores.candy}
 				</p>
-				<p>
+				<p style={{ color: "#FFA1FF" }}>
 					<span style={{ textDecoration: "underline" }}>Tofu:</span>{" "}
 					{foodScores.tofu}
 				</p>
-				<p>
+				<p style={{ color: "#FFA1FF" }}>
 					<span style={{ textDecoration: "underline" }}>Pizza:</span> 🍕
 					{foodScores.pizza}
 				</p>

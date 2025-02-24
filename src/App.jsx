@@ -29,8 +29,8 @@ export default function App() {
 			<Canvas shadows camera={{ position: [0, Math.PI, 12], fov: 75 }}>
 				<Scores />
 				<OrbitControls />
-				<ambientLight intensity={1.5} />
-				<pointLight position={[10, 0, 0]} />
+				<ambientLight intensity={2} />
+				<pointLight position={[10, 1, 1]} />
 				<Grid position={[0, -0.01, 0]} args={gridSize} {...gridConfig} />
 				<Loader />
 				<Experience />
