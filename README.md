@@ -19,12 +19,12 @@ First Implementation
 - [x] Assign foods to each button
 - [x] Set state to "grown"
 - [x] Show new creature
+- [x] Enable Reset, change state to hatching
+      background
 
 Still to go
 
 - [ ] Handle switch between eating modes
-- [ ] Enable Reset, change state to hatching
-      background
 - [ ] Display message "Thank you for growing this creature"
 - [ ] Show Button to Grow another
 

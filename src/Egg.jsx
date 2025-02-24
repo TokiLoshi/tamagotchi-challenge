@@ -25,10 +25,23 @@ export default function Egg() {
 		setState(GAME_STATES.IDLE);
 	};
 
+	const handlePointerEnter = () => {
+		document.body.style.cursor = "pointer";
+	};
+	const handlePointerLeave = () => {
+		document.body.style.cursor = "auto";
+	};
+
 	return (
 		<>
 			<Suspense>
-				<mesh position={[0, 2.9, 1]} scale={1.5} ref={eggRef} onClick={hatch}>
+				<mesh
+					position={[0, 2.9, 1]}
+					scale={1.5}
+					ref={eggRef}
+					onPointerEnter={handlePointerEnter}
+					onPointerLeave={handlePointerLeave}
+					onClick={hatch}>
 					<planeGeometry />
 					<meshStandardMaterial color='#E7D6C4' map={eggTexture} />
 				</mesh>

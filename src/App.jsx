@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import { Grid, Loader, OrbitControls } from "@react-three/drei";
 import { Leva, useControls } from "leva";
 import Experience from "./Experience";
-import Scores from "./Scores";
 
 export default function App() {
 	const { gridSize, ...gridConfig } = useControls("Grid Settings", {
@@ -27,7 +26,6 @@ export default function App() {
 		<>
 			<Leva collapsed />
 			<Canvas shadows camera={{ position: [0, Math.PI, 12], fov: 75 }}>
-				<Scores />
 				<OrbitControls />
 				<ambientLight intensity={2} />
 				<pointLight position={[10, 1, 1]} />

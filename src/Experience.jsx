@@ -8,6 +8,8 @@ import Egg from "./Egg";
 import Hatchling from "./Hatchling";
 import Eating from "./Eating";
 import GrownCreature from "./Grown";
+import Scores from "./Scores";
+import Reset from "./Reset";
 
 export default function Experience() {
 	const { currentState, scoreTotal, foodScores, setState, feedFood } =
@@ -22,10 +24,12 @@ export default function Experience() {
 
 	return (
 		<>
+			{currentState != "start" && scoreTotal < 3 && <Scores />}
 			{currentState == "start" && <Egg />}
 			{currentState == "idle" && <Hatchling />}
-			{currentState == "eating" && scoreTotal < 3 && <Eating />}
+			{currentState == "eating" && <Eating />}
 			{currentState == "idle" && scoreTotal >= 3 && <GrownCreature />}
+			{scoreTotal >= 3 && <Reset />}
 			<Tamagotchi />
 		</>
 	);
