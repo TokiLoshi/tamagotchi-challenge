@@ -57,13 +57,12 @@ export default function Experience() {
 				{currentState == "idle" && scoreTotal < 4 && (
 					<Hatchling texture={textures.hatchling} />
 				)}
-				{currentState == "eating" && (
+				{currentState == "eating" && scoreTotal < 4 && (
 					<Eating texture={textures.eating[currentFood]} />
 				)}
 				{currentState == "idle" && scoreTotal >= 4 && (
 					<GrownCreature baseUrl={urlBase} />
 				)}
-				{scoreTotal >= 4 && <Reset />}
 				<Tamagotchi />
 			</Suspense>
 		</>

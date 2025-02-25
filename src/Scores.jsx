@@ -1,35 +1,53 @@
 import { useStore, GAME_STATES } from "./Store";
 import { Html } from "@react-three/drei";
+import "./styles.css";
+import { useThree } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 
 export default function Scores() {
-	const { currentState, scoreTotal, foodScores } = useStore();
+	const { scoreTotal, foodScores } = useStore();
+	const { viewport } = useThree();
+	console.log("Viewport width: ", viewport.width);
+	const [position, setPosition] = useState([-5.5, 4, 0]);
+
+	useEffect(() => {
+		const isMobile = window.innerWidth < 768;
+		if (isMobile) {
+			setPosition([-3.8, 6, 0]);
+		}
+	}, [viewport.width]);
 
 	return (
 		<Html
-			position={[-5, 4, 0]}
-			wrapperClass='html-wrap'
+			position={position}
+			wrapperClass='menu-wrapper'
 			distanceFactor={10}
-			transform>
-			<div
-				style={{
-					backgroundColor: "#311971",
-					padding: "10px",
-					borderRadius: "10px",
-					position: "relative",
-				}}>
-				<h1 style={{ color: "#FFA1FF" }}>Today's menu</h1>
-				<p style={{ color: "#FFA1FF" }}>
-					<span style={{ textDecoration: "underline" }}>Candy:</span> 🍭{" "}
-					{foodScores.candy}
-				</p>
-				<p style={{ color: "#FFA1FF" }}>
-					<span style={{ textDecoration: "underline" }}>Tofu:</span>{" "}
-					{foodScores.tofu}
-				</p>
-				<p style={{ color: "#FFA1FF" }}>
-					<span style={{ textDecoration: "underline" }}>Pizza:</span> 🍕
-					{foodScores.pizza}
-				</p>
+			transform
+			occlude>
+			<div className='menu-container'>
+				<h2 className='menu-title'>Today's menu</h2>
+				<p className='menu-instructions'>Click the buttons to feed your pet</p>
+				<div className='food-items'>
+					<div className='food-item'>
+						<span className='food-name'>Candy: </span>
+						<span className='food-score'>🍭 {foodScores.candy}</span>
+					</div>
+					<div className='food-item'>
+						<span className='food-name'>Tofu: </span>
+						<span className='food-score'>🥦 {foodScores.tofu}</span>
+					</div>
+					<div className='food-item'>
+						<span className='food-name'>Pizza: </span>
+						<span className='food-score'>🍕 {foodScores.pizza}</span>
+					</div>
+				</div>
+				<div className='progress-bar'>
+					<div
+						className='progress'
+						style={{
+							width: `${Math.min((scoreTotal / 4) * 100, 100)}%`,
+						}}></div>
+				</div>
 			</div>
 		</Html>
 	);

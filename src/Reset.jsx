@@ -1,49 +1,29 @@
 import { useStore, GAME_STATES } from "./Store";
 import { Html } from "@react-three/drei";
+import "./styles.css";
 
 export default function Reset() {
-	const { scoreTotal, setState, reset } = useStore();
-	console.log("Time to load the reset button: ", scoreTotal);
+	const { reset } = useStore();
 
 	const handleReset = () => {
-		console.log("user would like to reset");
 		reset();
-	};
-
-	const handlePointerEnter = (event) => {
-		event.target.style.cursor = "pointer";
-	};
-	const handlePointerLeave = (event) => {
-		event.target.style.cursor = "default";
 	};
 	return (
 		<>
-			<Html position={[-5, 4, 0]}>
-				<div
-					style={{
-						padding: "20px",
-						backgroundColor: "#311971",
-						fontFamily: "sans-serif",
-					}}
-					onPointerEnter={handlePointerEnter}
-					onPointerLeave={handlePointerLeave}>
-					<p style={{ color: "whitesmoke", padding: "10px" }}>
-						Thank you for playing!
-					</p>
-					<p style={{ color: "whitesmoke", padding: "10px" }}>
+			<Html
+				position={[-5.5, 4, 0]}
+				wrapperClass='reset-wrapper'
+				distanceFactor={10}
+				transform
+				occlude>
+				<div className='reset-container'>
+					<h2 className='reset-title'>Thank you for playing!</h2>
+					<p className='reset-message'>
 						Would you like to grow another creature?
 					</p>
-					<p
-						style={{
-							color: "white",
-							padding: "20px",
-							border: "1px solidrgb(149, 144, 164)",
-							boxShadow: "5px 5px 5px",
-							borderRadius: "10px",
-						}}
-						onClick={handleReset}>
+					<button className='reset-button' onClick={handleReset}>
 						Reset
-					</p>
+					</button>
 				</div>
 			</Html>
 		</>

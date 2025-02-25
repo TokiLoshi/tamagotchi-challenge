@@ -25,25 +25,33 @@ First Implementation
 - [x] Display message "Thank you for growing this creature"
 - [x] Show Button to Grow another
 - [x] Add animation to distort egg and give idea of it hatching
+- [x] Assign final creature
+- [x] On click set timer, increase scale of creature, near end timer decrease scale of creature change state to not eating
 
 Still to go
 
+- [ ] Add Favicon
 - [ ] Fix bloom or postprocessing on screen
-- [ ] Check loading for performances
-- [ ] Ease animation for loading
-- [ ] On Model Click Rotate Model set Zustand State to "hatching"
-- [ ] set up timer for how long animation lasts at end activate bloom and change state to not eating
-- [ ] Add animation to move creature around and bounce
-- [ ] Add foods textures
 - [ ] Fix clickability of buttons should be a timeout
-- [ ] On click set timer, increase scale of creature, near end timer decrease scale of creature change state to not eating
+- [ ] Ensure buttons cannot be clicked if egg is not hatched
+- [ ] Add effect to know when buttons are clicked
+- [ ] Fix UI
+- [ ] set up timer for how long animation lasts at end activate bloom and change state to not eating
+- [ ] Ease moving animation to move creature around and bounce
 - [ ] Set up emojis of foods in side panel with score for each
-- [ ] When score total reaches 10 change status to growing
 - [ ] Create screen wipe animation
 - [ ] While growing add wipe animation to screen and bloom effect
-- [ ] Set timer add animation for creature to jump around at the end of the animation change state to "sleeping"
-- [ ] animate moving the tamogotchi onto it's side
-- [ ] create zzz animation to indicate sleeping
-- [ ] Change background colour to dimmer sleep like
-- [ ] Add Favicon -[ ] Make background look better
+- [ ] Change background colour to signal end of game
+- [ ] Make background look better - Studio finish from Examples
 - [ ] Fix lighting
+- [ ] Loading Screen
+- [ ] Add everything to Leva and explore options
+- [ ] Check loading for performances
+- [ ] Add sound effects when buttons are clicked
+- [ ] Make mobile friendly
+
+Stretch
+
+- [ ] Add Models of Candy, Pizza, Tofu
+- [ ] Add Physics and get them to bounce
+- [ ] Add animation for loading

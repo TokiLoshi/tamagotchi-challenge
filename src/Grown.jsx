@@ -4,6 +4,7 @@ import { calculateCreature } from "./utils.js";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { useStore } from "./Store";
+import Reset from "./Reset";
 
 export default function GrownCreature({ baseUrl }) {
 	const grownCreatureRef = useRef();
@@ -59,6 +60,7 @@ export default function GrownCreature({ baseUrl }) {
 				<planeGeometry />
 				<meshStandardMaterial color='#E7D6C4' map={texture} />
 			</animated.mesh>
+			<Reset />
 		</>
 	);
 }
