@@ -40,7 +40,11 @@ export default function Egg({ texture }) {
 				onPointerLeave={handlePointerLeave}
 				onClick={hatch}>
 				<planeGeometry />
-				<meshStandardMaterial color='#E7D6C4' map={texture} />
+				<meshStandardMaterial
+					color='#E7D6C4'
+					map={texture}
+					transparent={true}
+				/>
 			</animated.mesh>
 		</>
 	);

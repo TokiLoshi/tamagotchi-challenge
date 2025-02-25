@@ -19,7 +19,12 @@ export default function Hatchling({ texture }) {
 		<>
 			<animated.mesh position={position} scale={1.5} ref={hatchlingRef}>
 				<planeGeometry />
-				<meshStandardMaterial color='#E7D6C4' map={texture} />
+				<meshStandardMaterial
+					color='#E7D6C4'
+					map={texture}
+					transparent={true}
+					// transparent={true}
+				/>
 			</animated.mesh>
 		</>
 	);
