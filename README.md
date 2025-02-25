@@ -21,18 +21,21 @@ First Implementation
 - [x] Show new creature
 - [x] Enable Reset, change state to hatching
       background
+- [x] Handle switch between eating modes
+- [x] Display message "Thank you for growing this creature"
+- [x] Show Button to Grow another
+- [x] Add animation to distort egg and give idea of it hatching
 
 Still to go
 
-- [ ] Handle switch between eating modes
-- [ ] Display message "Thank you for growing this creature"
-- [ ] Show Button to Grow another
-
+- [ ] Fix bloom or postprocessing on screen
+- [ ] Check loading for performances
+- [ ] Ease animation for loading
 - [ ] On Model Click Rotate Model set Zustand State to "hatching"
-- [ ] Add animation to distort egg and give idea of it hatching
 - [ ] set up timer for how long animation lasts at end activate bloom and change state to not eating
 - [ ] Add animation to move creature around and bounce
 - [ ] Add foods textures
+- [ ] Fix clickability of buttons should be a timeout
 - [ ] On click set timer, increase scale of creature, near end timer decrease scale of creature change state to not eating
 - [ ] Set up emojis of foods in side panel with score for each
 - [ ] When score total reaches 10 change status to growing

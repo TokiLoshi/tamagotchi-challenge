@@ -11,15 +11,27 @@ import Scores from "./Scores";
 import Reset from "./Reset";
 import { TextureLoader } from "three";
 
+const urlBase = "./textures/Tamagotchi/";
+
 const TEXTURES = {
-	egg: "./textures/Tamagotchi/1.png",
-	hatchling: "./textures/Tamagotchi/2.png",
+	egg: urlBase + "egg.png",
+	hatchling: urlBase + "panda.png",
 	eating: {
-		candy: "./textures/Tamagotchi/3.png",
-		tofu: "./textures/Tamagotchi/4.png",
-		pizza: "./textures/Tamagotchi/5.png",
+		candy: urlBase + "pandaEating1.png",
+		tofu: urlBase + "pandaEating2.png",
+		pizza: urlBase + "pandaEating3.png",
 	},
-	grown: "./textures/Tamagotchi/6.png",
+	grown: {
+		cat: urlBase + "cat.png",
+		dinosaur: urlBase + "dinosaur.png",
+		dragon: urlBase + "dragon.png",
+		ducky: urlBase + "ducky.png",
+		frenchBulldog: urlBase + "frenchBulldog.png",
+		lion: urlBase + "lion.png",
+		lizard: urlBase + "lizard.png",
+		shiba: urlBase + "shiba.png",
+		tiger: urlBase + "tiger.png",
+	},
 };
 
 export default function Experience() {
@@ -33,7 +45,6 @@ export default function Experience() {
 				tofu: useLoader(TextureLoader, TEXTURES.eating.tofu),
 				pizza: useLoader(TextureLoader, TEXTURES.eating.pizza),
 			},
-			grown: useLoader(TextureLoader, TEXTURES.grown),
 		}),
 		[]
 	);
@@ -41,18 +52,18 @@ export default function Experience() {
 	return (
 		<>
 			<Suspense fallback={null}>
-				{currentState != "start" && scoreTotal < 3 && <Scores />}
+				{currentState != "start" && scoreTotal < 4 && <Scores />}
 				{currentState == "start" && <Egg texture={textures.egg} />}
-				{currentState == "idle" && scoreTotal < 3 && (
+				{currentState == "idle" && scoreTotal < 4 && (
 					<Hatchling texture={textures.hatchling} />
 				)}
 				{currentState == "eating" && (
 					<Eating texture={textures.eating[currentFood]} />
 				)}
-				{currentState == "idle" && scoreTotal >= 3 && (
-					<GrownCreature texture={textures.grown} />
+				{currentState == "idle" && scoreTotal >= 4 && (
+					<GrownCreature baseUrl={urlBase} />
 				)}
-				{scoreTotal >= 3 && <Reset />}
+				{scoreTotal >= 4 && <Reset />}
 				<Tamagotchi />
 			</Suspense>
 		</>
