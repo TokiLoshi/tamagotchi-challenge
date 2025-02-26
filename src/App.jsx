@@ -10,6 +10,8 @@ import {
 import { Leva, useControls, folder } from "leva";
 import Experience from "./Experience";
 import Floor from "./Floor";
+import { useStore } from "./Store";
+import { useMemo } from "react";
 
 export default function App() {
 	const {
@@ -50,6 +52,14 @@ export default function App() {
 	const { floorColor } = useControls("Floor", {
 		floorColor: "#ae98c1",
 	});
+	const { scoreTotal } = useStore();
+
+	const backgroundColor = useMemo(() => {
+		console.log("Current state in app: ", scoreTotal);
+		return scoreTotal === 4 ? "#340e55" : "#511d80";
+	}, [scoreTotal]);
+
+	console.log("Background color: ", backgroundColor);
 	return (
 		<>
 			<Leva collapsed />
@@ -61,6 +71,7 @@ export default function App() {
 					// toneMapping: "ACESFilmic",
 					// outputEncoding: "sRGB",
 				}}>
+				<color attach='background' args={[backgroundColor]} />
 				<PresentationControls
 					enabled={true}
 					cursor={true}

@@ -30,10 +30,10 @@ First Implementation
 - [x] add floor
 - [x] Add Favicon
 - [x] Set up emojis of foods in side panel with score for each
+- [x] Change background colour to signal end of game
 
 Still to go
 
-- [ ] Change background colour to signal end of game
 - [ ] Add bloom / postprocessing for final creature on screen
 - [ ] Add effect for hatching
 - [ ] Fix clickability of buttons should be a timeout
