@@ -29,21 +29,22 @@ First Implementation
 - [x] On click set timer, increase scale of creature, near end timer decrease scale of creature change state to not eating
 - [x] add floor
 - [x] Add Favicon
+- [x] Set up emojis of foods in side panel with score for each
 
 Still to go
 
-- [ ] Fix bloom or postprocessing on screen
+- [ ] Change background colour to signal end of game
+- [ ] Add bloom / postprocessing for final creature on screen
+- [ ] Add effect for hatching
 - [ ] Fix clickability of buttons should be a timeout
 - [ ] Ensure buttons cannot be clicked if egg is not hatched
 - [ ] Add effect to know when buttons are clicked
 - [ ] Fix UI
-- [ ] set up timer for how long animation lasts at end activate bloom and change state to not eating
 - [ ] Ease moving animation to move creature around and bounce
-- [ ] Set up emojis of foods in side panel with score for each
-- [ ] Create screen wipe animation
 - [ ] While growing add wipe animation to screen and bloom effect
-- [ ] Change background colour to signal end of game
+
 - [ ] Make background look better - Studio finish from Examples
+- [ ] Add instructional UI
 - [ ] Fix lighting
 - [ ] Loading Screen
 - [ ] Add everything to Leva and explore options
