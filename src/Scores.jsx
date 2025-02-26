@@ -25,7 +25,7 @@ export default function Scores() {
 			transform
 			occlude>
 			<div className='menu-container'>
-				<h2 className='menu-title'>Today's menu</h2>
+				<h2 className='menu-title'>Menu-Gotchi!</h2>
 				<p className='menu-instructions'>Click the buttons to feed your pet</p>
 				<div className='food-items'>
 					<div className='food-item'>

@@ -6,7 +6,7 @@ export default function Hatchling({ texture }) {
 
 	const { position } = useSpring({
 		from: { position: [0, 2.9, 1] },
-		to: [{ position: [0.3, 2.9, 1] }, { position: [-0.3, 2.9, 1] }],
+		to: [{ position: [0.3, 2.91, 1] }, { position: [-0.3, 2.934, 1] }],
 		loop: true,
 		config: {
 			mass: 1,

@@ -6,7 +6,7 @@ body,
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0.6, 0.6, 0.6, 0.9);
+	background: rgba(55, 34, 70, 0.9);
 	touch-action: none;
 }
 
@@ -25,7 +25,7 @@ body,
 	background-color: #5d33a9;
 	border: 3px solid #8e5fd1;
 	border-radius: 16px;
-	padding: 12px 18px;
+	padding: 10px 15px;
 	min-width: 200px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -33,7 +33,7 @@ body,
 .menu-title {
 	color: #ffa1ff;
 	margin: 0 0 12px 0;
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	text-align: center;
 	font-family: "Pixel", Arial, sans-serif;
 	text-shadow: 2px 2px 0 #311971;
@@ -105,7 +105,7 @@ body,
 /* Reset UI styling */
 
 .reset-wrapper {
-	pointer-events: auto;
+	pointer-events: none;
 }
 
 .reset-container {
@@ -121,23 +121,31 @@ body,
 .reset-title {
 	color: #ffa1ff;
 	margin: 0 0 16px 0;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	font-family: "Pixel", Arial, sans-serif;
 	text-shadow: 2px 2px 0 #311971;
 }
 
 .reset-message {
 	color: #ffdcff;
-	margin-bottom: 20px;
-	line-height: 1.4;
-	font-size: 1.1rem;
+
+	line-height: 1.2;
+	font-size: 1rem;
+	font-family: "Pixel", Arial, sans-serif;
+}
+
+.reset-info {
+	font-size: 0.8rem;
+	color: #ffdcff;
+	margin-bottom: 10px;
+	font-family: "Pixel", Arial, sans-serif;
 }
 
 .reset-button {
 	background-color: #311971;
-	color: white;
+	color: whitesmoke;
 	border: none;
-	padding: 12px 30px;
+	padding: 10px 15px;
 	font-size: 1.2rem;
 	border-radius: 12px;
 	cursor: pointer;

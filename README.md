@@ -27,10 +27,11 @@ First Implementation
 - [x] Add animation to distort egg and give idea of it hatching
 - [x] Assign final creature
 - [x] On click set timer, increase scale of creature, near end timer decrease scale of creature change state to not eating
+- [x] add floor
+- [x] Add Favicon
 
 Still to go
 
-- [ ] Add Favicon
 - [ ] Fix bloom or postprocessing on screen
 - [ ] Fix clickability of buttons should be a timeout
 - [ ] Ensure buttons cannot be clicked if egg is not hatched

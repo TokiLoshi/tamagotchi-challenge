@@ -11,16 +11,19 @@ export default function GrownCreature({ baseUrl }) {
 	const { foodScores } = useStore();
 	const [texture, setTexture] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
+	console.log("Is loading: ", isLoading);
 
 	const creatureType = calculateCreature(foodScores);
 	const texturePath = `${baseUrl}${creatureType}.png`;
 
 	useEffect(() => {
 		const loader = new TextureLoader();
+		console.log("In useEffect, isLoading: ", isLoading);
 		setIsLoading(true);
 		loader.load(
 			texturePath,
 			(loadedTexture) => {
+				console.log("Loading...");
 				setTexture(loadedTexture);
 				setIsLoading(false);
 			},
@@ -29,6 +32,7 @@ export default function GrownCreature({ baseUrl }) {
 				console.error(`Error loading texture for ${creatureType}`);
 			}
 		);
+		console.log("Returning from useEffect: ", isLoading);
 		return () => {
 			if (texture) {
 				texture.dispose();
@@ -48,11 +52,18 @@ export default function GrownCreature({ baseUrl }) {
 	});
 
 	if (isLoading || !texture) {
+		// console.log(i)
 		return null;
 	}
 
 	return (
 		<>
+			{isLoading && (
+				<mesh>
+					<sphereGeometry />
+					<meshStandardMaterial />
+				</mesh>
+			)}
 			<animated.mesh
 				position={[0, 2.9, 1]}
 				scale={scale}
@@ -64,7 +75,7 @@ export default function GrownCreature({ baseUrl }) {
 					transparent={true}
 				/>
 			</animated.mesh>
-			<Reset />
+			<Reset creature={creatureType} />
 		</>
 	);
 }
