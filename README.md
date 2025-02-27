@@ -32,6 +32,8 @@ This experience relied heavily on all the awesome libraries created by the [pmnd
 3. [Drei](https://drei.docs.pmnd.rs/getting-started/introduction) - R3F Helpers
 4. [Postprocessing](https://react-postprocessing.docs.pmnd.rs/introduction) - Animations and Effects
 5. [React Spring](https://www.react-spring.dev/) Animation Library 6.[Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) State management library
+6. [Leva](https://leva.pmnd.rs/?path=/story/inputs-string--simple) for debugging
+7. [R3F-Perf](https://github.com/utsuboco/r3f-perf) for performance tracking
 
 ### Modeling and Textures
 
