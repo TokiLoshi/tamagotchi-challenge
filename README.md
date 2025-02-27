@@ -1,59 +1,53 @@
-# Tamagotchi Challenge for Three.js Journey
+# Menu-Gotchi: A Three.js Journey
 
-Menu-Gotchi was built for the Three.js Journey bi-monthly community challenge, and inspired some lovely 90s nostalgia. I modeled a Tamagotchi that looks like the one I had when I was a kid, at least the outside colours look like it, the creatures inside started out as 2D textures I drew and drew on AI generation for inspiration and creation. This was a fun experiment where you feed the tamagotchi different foods and get a surprise character based on the combination of foods you provide it.
+## What will you grow?
 
-The creature goes through three different lifecycles: hatching, growing and grown, where the final reveal is your resulting creature. There are three kinds of food you can feed your creature: candy, tofu, or pizza, and you control those with the tamagotchi buttons. There are a possible combination of:
+Try different food combinations of candy, tofu, and pizza to grow different creatures in this 3D virtual pet experience.
 
-# Technologies used
+![Image Placeholder]()
 
-Three.js with React Three Fiber, Drei, Postprocessing, React Spring Animation Library, Zustand, Blender.
+[Live Demo](https://tamagotchi-challenge-fawn.vercel.app/)
 
-# Credits
+## 📖 Overview
 
-Textures generated with Canva's AI magic components and the prompt "voxel style {CREATURE}" where the creature was for example the hatchling panda.
+Menu-Gotchi was built for the Three.js Journey bi-monthly community challenge and inspired some 90s nostalgia. I used Blender to model a Tamagotchi that looks like the one I had when I was a kid; at least the outside colors look like it; the creatures inside started as 2D textures I drew and then used AI generation for inspiration and creation.
 
-# ToDo List
+The creature goes through three lifecycles:
 
-First Implementation
+1. hatching
+2. growing
+3. fully-grown.
 
-- [x] Basic project set up
-- [x] Deploy to Vercel
-- [x] Set up Zustand states ("start", "hatching", "idle", "eating", "growing", "sleeping")
-- [x] Set up food counters
-- [x] Create LowPoly Tamagotchi Blender File
-- [x] Load Model on
-- [x] Implement click detection
-- [x] remove egg texture and add small creature texture
-- [x] Create Egg sprite texture or shader
-- [x] On click change state to eating
-- [x] Assign foods to each button
-- [x] Set state to "grown"
-- [x] Show new creature
-- [x] Enable Reset, change state to hatching
-      background
-- [x] Handle switch between eating modes
-- [x] Display message "Thank you for growing this creature"
-- [x] Show Button to Grow another
-- [x] Add animation to distort egg and give idea of it hatching
-- [x] Assign final creature
-- [x] On click set timer, increase scale of creature, near end timer decrease scale of creature change state to not eating
-- [x] add floor
-- [x] Add Favicon
-- [x] Set up emojis of foods in side panel with score for each
-- [x] Change background colour to signal end of game
-- [x] Add bloom / postprocessing for final creature on screen
-- [x] Fix clickability of buttons should be a timeout so user can't click again
-- [x] Hide Leva
-- [x] Add everything to Leva and explore options
-- [x] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
-- [x] fix useGesture error
+There are eight possible combinations of fully-grown creatures, which are calculated in the utils.js file.
 
-Still to go
+## 📚 Libraries and technologies used
 
-- [ ] Add Loading Screen
-- [ ] Check loading for performances
-- [ ] Fix UI
-- [ ] Make background look better - Studio finish from Examples
-- [ ] Fix lighting
-- [ ] Add sound effects when buttons are clicked
-- [ ] Make mobile friendly
+[Vite](https://vite.dev/) Build tool and Development server
+[Vercel](https://vercel.com/) for deployment
+
+This experience relied heavily on all the awesome libraries created by the [pmnd.rs collective](https://docs.pmnd.rs/)
+
+1. [Three.js](https://threejs.org/) - 3D Library
+2. [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction) - React renderer for Three JS
+3. [Drei](https://drei.docs.pmnd.rs/getting-started/introduction) - R3F Helpers
+4. [Postprocessing](https://react-postprocessing.docs.pmnd.rs/introduction) - Animations and Effects
+5. [React Spring](https://www.react-spring.dev/) Animation Library 6.[Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) State management library
+
+### Modeling and Textures
+
+[Blender](https://www.blender.org/) for 3D Modeling
+[Canva](https://www.canva.com/) for Texture generation with "magic" components, where the AI was prompted with "voxel style {CREATURE}" or for example "voxel style panda" for the hatchling component in the "growing" stage.
+
+## 🚀 How to use
+
+With node and npm clone the repositository, from the project root run `npm install` followed by `npm run dev`
+
+## 🐛 Known issues & Future improvements
+
+- Not yet optimized for mobile devices
+- Performance improvements are needed
+- Loading experience is buggy
+- UI enhancements are needed
+
+📜 License
+MIT © [Bianca Silva]
