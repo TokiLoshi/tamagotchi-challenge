@@ -8,9 +8,14 @@ import Hatchling from "./Hatchling";
 import Eating from "./Eating";
 import GrownCreature from "./Grown";
 import Scores from "./Scores";
-import Reset from "./Reset";
 import { TextureLoader } from "three";
 import { calculateCreature } from "./utils.js";
+import {
+	Bloom,
+	EffectComposer,
+	ToneMapping,
+} from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
 const urlBase = "./textures/Tamagotchi/";
 
@@ -69,21 +74,40 @@ export default function Experience() {
 		return null;
 	}, [foodScores, scoreTotal]);
 
+	const bloomIntensity = useMemo(() => {
+		if (scoreTotal >= 4) {
+			return 1.5;
+		} else if (scoreTotal === 3) {
+			return 0.5;
+		}
+		return 0.0;
+	}, [scoreTotal]);
+
 	return (
 		<>
 			<Suspense fallback={null}>
-				{currentState != "start" && scoreTotal < 4 && <Scores />}
-				{currentState == "start" && <Egg texture={textures.egg} />}
-				{currentState == "idle" && scoreTotal < 4 && (
-					<Hatchling texture={textures.hatchling} />
-				)}
-				{currentState == "eating" && scoreTotal < 4 && (
-					<Eating texture={textures.eating[currentFood]} />
-				)}
-				{currentState == "idle" && scoreTotal >= 4 && (
-					<GrownCreature baseUrl={urlBase} creatureType={creatureType} />
-				)}
-				<Tamagotchi />
+				<EffectComposer>
+					<Bloom
+						intensity={bloomIntensity}
+						luminanceThreshold={0.2}
+						luminanceSmoothing={0.9}
+						mipmapBlur
+					/>
+					{currentState != "start" && scoreTotal < 4 && <Scores />}
+					{currentState == "start" && <Egg texture={textures.egg} />}
+					{currentState == "idle" && scoreTotal < 4 && (
+						<Hatchling texture={textures.hatchling} />
+					)}
+					{currentState == "eating" && scoreTotal < 4 && (
+						<Eating texture={textures.eating[currentFood]} />
+					)}
+
+					{scoreTotal >= 4 && (
+						<GrownCreature baseUrl={urlBase} creatureType={creatureType} />
+					)}
+
+					<Tamagotchi />
+				</EffectComposer>
 			</Suspense>
 		</>
 	);

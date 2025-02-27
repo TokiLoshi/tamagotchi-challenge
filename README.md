@@ -31,13 +31,13 @@ First Implementation
 - [x] Add Favicon
 - [x] Set up emojis of foods in side panel with score for each
 - [x] Change background colour to signal end of game
+- [x] Add bloom / postprocessing for final creature on screen
 
 Still to go
 
-- [ ] Add bloom / postprocessing for final creature on screen
-- [ ] Add effect for hatching
 - [ ] Fix clickability of buttons should be a timeout
 - [ ] Ensure buttons cannot be clicked if egg is not hatched
+- [ ] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
 - [ ] Add effect to know when buttons are clicked
 - [ ] Fix UI
 - [ ] Ease moving animation to move creature around and bounce
