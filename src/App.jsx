@@ -1,12 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import {
-	Loader,
-	PresentationControls,
-	AccumulativeShadows,
-	RandomizedLight,
-	Environment,
-	SoftShadows,
-} from "@react-three/drei";
+import { Loader, PresentationControls } from "@react-three/drei";
 import { Leva, useControls, folder } from "leva";
 import Experience from "./Experience";
 import Floor from "./Floor";
@@ -56,11 +49,9 @@ export default function App() {
 	const { scoreTotal } = useStore();
 
 	const backgroundColor = useMemo(() => {
-		console.log("Current state in app: ", scoreTotal);
 		return scoreTotal === 4 ? "#340e55" : "#511d80";
 	}, [scoreTotal]);
 
-	console.log("Background color: ", backgroundColor);
 	return (
 		<>
 			<Leva collapsed hidden={location.hash !== "#debug"} />
@@ -84,36 +75,6 @@ export default function App() {
 					config={{ mass: 2, tension: 500 }}
 					snap={{ mas: 4, tension: 1500 }}>
 					<ambientLight intensity={ambientIntensity} />
-					{/* <spotLight
-						position={[5, 5, 5]}
-						angle={0.25}
-						penumbra={0.5}
-						intensity={spotLightIntensity}
-					/>
-					<spotLight
-						position={[-5, 3, -5]}
-						angle={0.3}
-						penumbra={0.5}
-						intensity={spotLightIntensity * 0.5}
-					/> */}
-					{/* <Environment preset='city' /> */}
-					{/* <AccumulativeShadows
-						position={[0, -2.9, 0]}
-						scale={shadowScale}
-						opacity={shadowOpacity}
-						frames={1}
-						temporal
-						alphaTest={0.85}
-						color='#333'>
-						<RandomizedLight
-							amount={8}
-							radius={10}
-							ambient={0.5}
-							intesnity={1}
-							position={[5, 5, 5]}
-							bias={0.001}
-						/>
-					</AccumulativeShadows> */}
 					<directionalLight
 						// position={directionalPosition}
 						intensity={directionalIntensity}
@@ -122,7 +83,6 @@ export default function App() {
 						shadowBias={shadowBias}
 						// shadowRadius={shadowRadius}
 					/>
-					{/* <Grid position={[0, -0.01, 0]} args={gridSize} {...gridConfig} /> */}
 					<Loader />
 					<Experience />
 					<Floor floorColor={floorColor} />

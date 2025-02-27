@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useStore, GAME_STATES } from "./Store";
 import { useSpring, animated } from "@react-spring/three";
 
-export default function Egg({ texture }) {
+export default function Egg({ texture, visible = true }) {
 	// To Do, remove the background
 	const eggRef = useRef();
 
@@ -23,29 +23,31 @@ export default function Egg({ texture }) {
 		setState(GAME_STATES.IDLE);
 	};
 
-	const handlePointerEnter = () => {
-		document.body.style.cursor = "pointer";
-	};
-	const handlePointerLeave = () => {
-		document.body.style.cursor = "auto";
-	};
+	// const handlePointerEnter = () => {
+	// 	document.body.style.cursor = "pointer";
+	// };
+	// const handlePointerLeave = () => {
+	// 	document.body.style.cursor = "auto";
+	// };
 
 	return (
 		<>
-			<animated.mesh
-				position={[0, 2.9, 1]}
-				scale={scale}
-				ref={eggRef}
-				onPointerEnter={handlePointerEnter}
-				onPointerLeave={handlePointerLeave}
-				onClick={hatch}>
-				<planeGeometry />
-				<meshStandardMaterial
-					color='#E7D6C4'
-					map={texture}
-					transparent={true}
-				/>
-			</animated.mesh>
+			<group visible={visible}>
+				<animated.mesh
+					position={[0, 2.9, 1]}
+					scale={scale}
+					ref={eggRef}
+					// onPointerEnter={handlePointerEnter}
+					// onPointerLeave={handlePointerLeave}
+					onClick={hatch}>
+					<planeGeometry />
+					<meshStandardMaterial
+						color='#E7D6C4'
+						map={texture}
+						transparent={true}
+					/>
+				</animated.mesh>
+			</group>
 		</>
 	);
 }

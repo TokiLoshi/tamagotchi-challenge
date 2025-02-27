@@ -6,7 +6,7 @@ export default function Floor({ floorColor }) {
 				<meshStandardMaterial
 					color={floorColor}
 					roughness={0.8}
-					metalness={0.2}
+					metalness={0.3}
 				/>
 			</mesh>
 		</>

@@ -48,11 +48,11 @@ First Implementation
 
 Still to go
 
-- [ ] Loading Screen
-- [ ] Check loading for performances
 - [ ] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
+- [ ] Add Loading Screen
+- [ ] Check loading for performances
+
 - [ ] Fix UI
-- [ ] Add loading screen
 - [ ] Make background look better - Studio finish from Examples
 - [ ] Fix lighting
 - [ ] Add sound effects when buttons are clicked

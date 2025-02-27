@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useSpring, animated } from "@react-spring/three";
 
-export default function Hatchling({ texture }) {
+export default function Hatchling({ texture, visible = true }) {
 	const hatchlingRef = useRef();
 
 	const { position } = useSpring({
@@ -17,15 +17,17 @@ export default function Hatchling({ texture }) {
 
 	return (
 		<>
-			<animated.mesh position={position} scale={1.5} ref={hatchlingRef}>
-				<planeGeometry />
-				<meshStandardMaterial
-					color='#E7D6C4'
-					map={texture}
-					transparent={true}
-					// transparent={true}
-				/>
-			</animated.mesh>
+			<group visible={visible}>
+				<animated.mesh position={position} scale={1.5} ref={hatchlingRef}>
+					<planeGeometry />
+					<meshStandardMaterial
+						color='#E7D6C4'
+						map={texture}
+						transparent={true}
+						// transparent={true}
+					/>
+				</animated.mesh>
+			</group>
 		</>
 	);
 }

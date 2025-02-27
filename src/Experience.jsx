@@ -10,12 +10,14 @@ import GrownCreature from "./Grown";
 import Scores from "./Scores";
 import { TextureLoader } from "three";
 import { calculateCreature } from "./utils.js";
-import {
-	Bloom,
-	EffectComposer,
-	ToneMapping,
-} from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import { Html, useProgress } from "@react-three/drei";
+
+// From Drei https://drei.docs.pmnd.rs/loaders/progress-use-progress
+function Loader() {
+	const { active, progress, errors, item, loaded, total } = useProgress();
+	return <Html center>{progress} % loaded </Html>;
+}
 
 const urlBase = "./textures/Tamagotchi/";
 
@@ -42,6 +44,7 @@ const TEXTURES = {
 
 export default function Experience() {
 	const { currentState, scoreTotal, currentFood, foodScores } = useStore();
+	console.log("Current State: ", currentState);
 	const textures = useMemo(
 		() => ({
 			egg: useLoader(TextureLoader, TEXTURES.egg),
@@ -68,7 +71,6 @@ export default function Experience() {
 
 	const creatureType = useMemo(() => {
 		if (scoreTotal >= 4) {
-			console.log("calculating creature type");
 			return calculateCreature(foodScores);
 		}
 		return null;
@@ -85,22 +87,25 @@ export default function Experience() {
 
 	return (
 		<>
-			<Suspense fallback={null}>
+			<Suspense fallback={Loader}>
 				<EffectComposer>
 					<Bloom
 						intensity={bloomIntensity}
 						luminanceThreshold={0.2}
 						luminanceSmoothing={0.9}
 						mipmapBlur
+						resolutionScale={0.5}
 					/>
-					{currentState != "start" && scoreTotal < 4 && <Scores />}
-					{currentState == "start" && <Egg texture={textures.egg} />}
-					{currentState == "idle" && scoreTotal < 4 && (
-						<Hatchling texture={textures.hatchling} />
-					)}
-					{currentState == "eating" && scoreTotal < 4 && (
-						<Eating texture={textures.eating[currentFood]} />
-					)}
+					<Egg visible={currentState === "start"} texture={textures.egg} />
+					<Hatchling
+						texture={textures.hatchling}
+						visible={currentState === "idle" && scoreTotal < 4}
+					/>
+					<Eating
+						texture={textures.eating[currentFood]}
+						visible={currentState === "eating" && scoreTotal < 4}
+					/>
+					{currentState !== "start" && scoreTotal < 4 && <Scores />}
 
 					{scoreTotal >= 4 && (
 						<GrownCreature baseUrl={urlBase} creatureType={creatureType} />

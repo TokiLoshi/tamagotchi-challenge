@@ -17,8 +17,7 @@ export default function Tamagotchi(props) {
 	const middleButtonRef = useRef();
 	const rightButtonRef = useRef();
 
-	const { setFood, scoreTotal, currentState, foodScores, setState, feedFood } =
-		useStore();
+	const { setFood, scoreTotal, currentState, setState, feedFood } = useStore();
 
 	const screenMaterial = useMemo(() => {
 		const newMaterial = materials["Material.002"].clone();
@@ -38,6 +37,10 @@ export default function Tamagotchi(props) {
 	// Handle Button Clicks
 	// TODO: button click animations
 	const handleLeftClick = () => {
+		if (currentState === GAME_STATES.START) {
+			setState(GAME_STATES.IDLE);
+			return;
+		}
 		if (scoreTotal === 4 || currentState === GAME_STATES.EATING) return;
 		setState(GAME_STATES.EATING);
 		feedFood("candy");
@@ -45,6 +48,10 @@ export default function Tamagotchi(props) {
 		setTimeout(() => setState(GAME_STATES.IDLE), 1000);
 	};
 	const handleMiddleClick = () => {
+		if (currentState === GAME_STATES.START) {
+			setState(GAME_STATES.IDLE);
+			return;
+		}
 		if (scoreTotal === 4 || currentState === GAME_STATES.EATING) return;
 		setState(GAME_STATES.EATING);
 		feedFood("tofu");
@@ -52,6 +59,10 @@ export default function Tamagotchi(props) {
 		setTimeout(() => setState(GAME_STATES.IDLE), 1000);
 	};
 	const handleRightClick = () => {
+		if (currentState === GAME_STATES.START) {
+			setState(GAME_STATES.IDLE);
+			return;
+		}
 		if (scoreTotal === 4 || currentState === GAME_STATES.EATING) return;
 		setState(GAME_STATES.EATING);
 		feedFood("pizza");
