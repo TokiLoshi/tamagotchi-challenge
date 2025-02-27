@@ -12,6 +12,7 @@ import Experience from "./Experience";
 import Floor from "./Floor";
 import { useStore } from "./Store";
 import { useMemo } from "react";
+import { Perf } from "r3f-perf";
 
 export default function App() {
 	const {
@@ -62,7 +63,7 @@ export default function App() {
 	console.log("Background color: ", backgroundColor);
 	return (
 		<>
-			<Leva collapsed />
+			<Leva collapsed hidden={location.hash !== "#debug"} />
 			<Canvas
 				shadows
 				camera={{ position: [0, 3, 12], fov: 75 }}
@@ -72,6 +73,7 @@ export default function App() {
 					// outputEncoding: "sRGB",
 				}}>
 				<color attach='background' args={[backgroundColor]} />
+				<Perf position='top-left' />
 				<PresentationControls
 					enabled={true}
 					cursor={true}

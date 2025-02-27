@@ -1,6 +1,16 @@
 # Tamagotchi Challenge for Three.js Journey
 
-Lets see what we can build
+Menu-Gotchi was built for the Three.js Journey bi-monthly community challenge, and inspired some lovely 90s nostalgia. I modeled a Tamagotchi that looks like the one I had when I was a kid, at least the outside colours look like it, the creatures inside started out as 2D textures I drew and drew on AI generation for inspiration and creation. This was a fun experiment where you feed the tamagotchi different foods and get a surprise character based on the combination of foods you provide it.
+
+The creature goes through three different lifecycles: hatching, growing and grown, where the final reveal is your resulting creature. There are three kinds of food you can feed your creature: candy, tofu, or pizza, and you control those with the tamagotchi buttons. There are a possible combination of:
+
+# Technologies used
+
+Three.js with React Three Fiber, Drei, Postprocessing, React Spring Animation Library, Zustand, Blender.
+
+# Credits
+
+Textures generated with Canva's AI magic components and the prompt "voxel style {CREATURE}" where the creature was for example the hatchling panda.
 
 # ToDo List
 
@@ -32,28 +42,18 @@ First Implementation
 - [x] Set up emojis of foods in side panel with score for each
 - [x] Change background colour to signal end of game
 - [x] Add bloom / postprocessing for final creature on screen
+- [x] Fix clickability of buttons should be a timeout so user can't click again
+- [x] Hide Leva
+- [x] Add everything to Leva and explore options
 
 Still to go
 
-- [ ] Fix clickability of buttons should be a timeout
-- [ ] Ensure buttons cannot be clicked if egg is not hatched
-- [ ] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
-- [ ] Add effect to know when buttons are clicked
-- [ ] Fix UI
-- [ ] Ease moving animation to move creature around and bounce
-- [ ] While growing add wipe animation to screen and bloom effect
-
-- [ ] Make background look better - Studio finish from Examples
-- [ ] Add instructional UI
-- [ ] Fix lighting
 - [ ] Loading Screen
-- [ ] Add everything to Leva and explore options
 - [ ] Check loading for performances
+- [ ] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
+- [ ] Fix UI
+- [ ] Add loading screen
+- [ ] Make background look better - Studio finish from Examples
+- [ ] Fix lighting
 - [ ] Add sound effects when buttons are clicked
 - [ ] Make mobile friendly
-
-Stretch
-
-- [ ] Add Models of Candy, Pizza, Tofu
-- [ ] Add Physics and get them to bounce
-- [ ] Add animation for loading
