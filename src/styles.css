@@ -8,6 +8,10 @@ body,
 	height: 100%;
 	overflow: hidden;
 	/* background: #362145e6; */
+	background: #1e0f45;
+	touch-action: none;
+}
+.r3f {
 	touch-action: none;
 }
 
@@ -26,9 +30,9 @@ body,
 	background-color: #5d33a9;
 	border: 3px solid #8e5fd1;
 	border-radius: 16px;
-	padding: 10px 15px;
-	min-width: 200px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	padding: 10px 10px;
+	min-width: 180px;
+	box-shadow: 0 4px 8px rgba(1, 0, 0, 0.3);
 }
 
 .menu-title {

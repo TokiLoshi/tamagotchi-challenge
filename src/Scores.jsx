@@ -8,12 +8,12 @@ export default function Scores({ visible = true }) {
 	const { scoreTotal, foodScores } = useStore();
 	const { viewport } = useThree();
 	console.log("Viewport width: ", viewport.width);
-	const [position, setPosition] = useState([-5.5, 4, 0]);
+	const [position, setPosition] = useState([-5, 3, 0]);
 
 	useEffect(() => {
 		const isMobile = window.innerWidth < 768;
 		if (isMobile) {
-			setPosition([-3.8, 6, 0]);
+			setPosition([-3.8, 4, 0]);
 		}
 	}, [viewport.width]);
 

@@ -45,13 +45,13 @@ First Implementation
 - [x] Fix clickability of buttons should be a timeout so user can't click again
 - [x] Hide Leva
 - [x] Add everything to Leva and explore options
+- [x] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
+- [x] fix useGesture error
 
 Still to go
 
-- [ ] refactor for stages https://r3f.docs.pmnd.rs/advanced/pitfalls#%E2%9C%85-consider-using-visibility-instead to avoid mounting runtime
 - [ ] Add Loading Screen
 - [ ] Check loading for performances
-
 - [ ] Fix UI
 - [ ] Make background look better - Studio finish from Examples
 - [ ] Fix lighting

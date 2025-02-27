@@ -1,12 +1,18 @@
 import { Canvas } from "@react-three/fiber";
-import { PresentationControls } from "@react-three/drei";
+import {
+	ContactShadows,
+	PresentationControls,
+	Loader,
+	useProgress,
+} from "@react-three/drei";
 import { Leva, useControls, folder } from "leva";
 import Experience from "./Experience";
 import Floor from "./Floor";
 import { useStore } from "./Store";
-import { useMemo } from "react";
+import { Suspense, useMemo } from "react";
 import { Perf } from "r3f-perf";
-import Loader from "./Loader";
+import LoadingScreen from "./LoadingScreen";
+// import Loader from "./Loader";
 
 export default function App() {
 	const {
@@ -53,41 +59,48 @@ export default function App() {
 		return scoreTotal === 4 ? "#340e55" : "#511d80";
 	}, [scoreTotal]);
 
+	const isDebugMode = location.hash === "#debug";
+
 	return (
 		<>
 			<Leva collapsed hidden={location.hash !== "#debug"} />
 			<Canvas
 				shadows
+				className='r3f'
 				camera={{ position: [0, 3, 12], fov: 75 }}
 				gl={{
 					antialias: true,
 					// toneMapping: "ACESFilmic",
 					// outputEncoding: "sRGB",
 				}}>
-				<color attach='background' args={[backgroundColor]} />
-				<Perf position='top-left' />
-				<PresentationControls
-					enabled={true}
-					cursor={true}
-					global
-					polar={polar}
-					azimuth={azimuth}
-					zoom={zoom}
-					config={{ mass: 2, tension: 500 }}
-					snap={{ mas: 4, tension: 1500 }}>
-					<ambientLight intensity={ambientIntensity} />
-					<directionalLight
-						// position={directionalPosition}
-						intensity={directionalIntensity}
-						castShadow
-						// shadow-mapSize={[shadowMapSize, shadowMapSize]}
-						shadowBias={shadowBias}
-						// shadowRadius={shadowRadius}
-					/>
-					<Experience />
-					<Floor floorColor={floorColor} />
-				</PresentationControls>
-				<Loader />
+				<Suspense fallback={<LoadingScreen />}>
+					<color attach='background' args={[backgroundColor]} />
+					{isDebugMode && <Perf position='top-left' />}
+
+					<PresentationControls
+						enabled={true}
+						cursor={true}
+						global
+						polar={polar}
+						azimuth={azimuth}
+						zoom={zoom}
+						config={{ mass: 2, tension: 500 }}
+						snap={{ mas: 4, tension: 1500 }}>
+						<ambientLight intensity={ambientIntensity} />
+						<directionalLight
+							// position={directionalPosition}
+							intensity={directionalIntensity}
+							castShadow
+							// shadow-mapSize={[shadowMapSize, shadowMapSize]}
+							shadowBias={shadowBias}
+							// shadowRadius={shadowRadius}
+						/>
+
+						<Experience />
+
+						<Floor floorColor={floorColor} />
+					</PresentationControls>
+				</Suspense>
 			</Canvas>
 		</>
 	);

@@ -11,16 +11,8 @@ import Scores from "./Scores";
 import { TextureLoader } from "three";
 import { calculateCreature } from "./utils.js";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { useProgress } from "@react-three/drei";
-// import Loader from "./Loader.jsx";
-
-function Loader() {
-	const { active, progress, errors, item, loaded, total } = useProgress();
-	console.log(
-		`Active: ${active} \n Progress: ${progress} \n Errors: ${errors} \n item ${item} \n Loaded: ${loaded} Total: ${total}`
-	);
-	return <Html center>{progress} % loaded</Html>;
-}
+import { Loader } from "@react-three/drei";
+import LoadingScreen from "./LoadingScreen";
 
 const urlBase = "./textures/Tamagotchi/";
 
@@ -90,33 +82,31 @@ export default function Experience() {
 
 	return (
 		<>
-			<Suspense fallback={null}>
-				<EffectComposer>
-					<Bloom
-						intensity={bloomIntensity}
-						luminanceThreshold={0.2}
-						luminanceSmoothing={0.9}
-						mipmapBlur
-						resolutionScale={0.5}
-					/>
-					<Egg visible={currentState === "start"} texture={textures.egg} />
-					<Hatchling
-						texture={textures.hatchling}
-						visible={currentState === "idle" && scoreTotal < 4}
-					/>
-					<Eating
-						texture={textures.eating[currentFood]}
-						visible={currentState === "eating" && scoreTotal < 4}
-					/>
-					{currentState !== "start" && scoreTotal < 4 && <Scores />}
+			<EffectComposer>
+				<Bloom
+					intensity={bloomIntensity}
+					luminanceThreshold={0.2}
+					luminanceSmoothing={0.9}
+					mipmapBlur
+					resolutionScale={0.5}
+				/>
+				<Egg visible={currentState === "start"} texture={textures.egg} />
+				<Hatchling
+					texture={textures.hatchling}
+					visible={currentState === "idle" && scoreTotal < 4}
+				/>
+				<Eating
+					texture={textures.eating[currentFood]}
+					visible={currentState === "eating" && scoreTotal < 4}
+				/>
+				{currentState !== "start" && scoreTotal < 4 && <Scores />}
 
-					{scoreTotal >= 4 && (
-						<GrownCreature baseUrl={urlBase} creatureType={creatureType} />
-					)}
+				{scoreTotal >= 4 && (
+					<GrownCreature baseUrl={urlBase} creatureType={creatureType} />
+				)}
 
-					<Tamagotchi />
-				</EffectComposer>
-			</Suspense>
+				<Tamagotchi />
+			</EffectComposer>
 		</>
 	);
 }
