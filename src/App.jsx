@@ -1,11 +1,12 @@
 import { Canvas } from "@react-three/fiber";
-import { Loader, PresentationControls } from "@react-three/drei";
+import { PresentationControls } from "@react-three/drei";
 import { Leva, useControls, folder } from "leva";
 import Experience from "./Experience";
 import Floor from "./Floor";
 import { useStore } from "./Store";
 import { useMemo } from "react";
 import { Perf } from "r3f-perf";
+import Loader from "./Loader";
 
 export default function App() {
 	const {
@@ -83,10 +84,10 @@ export default function App() {
 						shadowBias={shadowBias}
 						// shadowRadius={shadowRadius}
 					/>
-					<Loader />
 					<Experience />
 					<Floor floorColor={floorColor} />
 				</PresentationControls>
+				<Loader />
 			</Canvas>
 		</>
 	);

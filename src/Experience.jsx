@@ -11,12 +11,15 @@ import Scores from "./Scores";
 import { TextureLoader } from "three";
 import { calculateCreature } from "./utils.js";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { Html, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
+// import Loader from "./Loader.jsx";
 
-// From Drei https://drei.docs.pmnd.rs/loaders/progress-use-progress
 function Loader() {
 	const { active, progress, errors, item, loaded, total } = useProgress();
-	return <Html center>{progress} % loaded </Html>;
+	console.log(
+		`Active: ${active} \n Progress: ${progress} \n Errors: ${errors} \n item ${item} \n Loaded: ${loaded} Total: ${total}`
+	);
+	return <Html center>{progress} % loaded</Html>;
 }
 
 const urlBase = "./textures/Tamagotchi/";
@@ -87,7 +90,7 @@ export default function Experience() {
 
 	return (
 		<>
-			<Suspense fallback={Loader}>
+			<Suspense fallback={null}>
 				<EffectComposer>
 					<Bloom
 						intensity={bloomIntensity}
