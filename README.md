@@ -4,9 +4,9 @@
 
 Try different food combinations of candy, tofu, and pizza to grow different creatures in this 3D virtual pet experience.
 
-![Image Placeholder]()
+![Image Placeholder](https://github.com/TokiLoshi/tamagotchi-challenge/blob/main/preview.png)
 
-[Live Demo](https://tamagotchi-challenge-fawn.vercel.app/)
+⚡️ [Live Demo](https://tamagotchi-challenge-fawn.vercel.app/)
 
 ## 📖 Overview
 
@@ -22,8 +22,8 @@ There are eight possible combinations of fully-grown creatures, which are calcul
 
 ## 📚 Libraries and technologies used
 
-[Vite](https://vite.dev/) Build tool and Development server
-[Vercel](https://vercel.com/) for deployment
+- [Vite](https://vite.dev/) Build tool and Development server
+- [Vercel](https://vercel.com/) for deployment
 
 This experience relied heavily on all the awesome libraries created by the [pmnd.rs collective](https://docs.pmnd.rs/)
 
