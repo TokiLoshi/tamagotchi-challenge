@@ -12,7 +12,7 @@ export default function Reset({ creature }) {
 	return (
 		<>
 			<Html
-				position={[-5, 4, 0]}
+				position={[-5, 3, 0]}
 				wrapperClass='reset-wrapper'
 				distanceFactor={10}
 				transform
