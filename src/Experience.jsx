@@ -77,7 +77,7 @@ export default function Experience() {
 		} else if (scoreTotal === 3) {
 			return 0.5;
 		}
-		return 0.0;
+		return 0.5;
 	}, [scoreTotal]);
 
 	return (

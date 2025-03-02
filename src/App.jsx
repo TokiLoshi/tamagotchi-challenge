@@ -74,7 +74,7 @@ export default function App() {
 			<Canvas
 				shadows
 				className='r3f'
-				camera={{ position: [0, 3, 8.5], fov: 75 }}
+				camera={{ position: [0, 3, 10], fov: 75 }}
 				gl={{
 					antialias: true,
 					toneMapping: "ACESFilmic",

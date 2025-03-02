@@ -4,9 +4,9 @@ body,
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+	/* overflow: hidden; */
 	/* background: #362145e6; */
 	background: #1e0f45;
 	touch-action: none;
